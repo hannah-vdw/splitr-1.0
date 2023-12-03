@@ -11,7 +11,7 @@ namespace Calculations.Tests
             var calculations = new Calculations();
             double result = calculations.DivideEvenly(["Alex", "Helen", "Fabio"], 15);
 
-            Assert.Equal(result, 5);
+            Assert.Equal(5, result);
         }
 
         [Fact]
@@ -20,7 +20,7 @@ namespace Calculations.Tests
             var calculations = new Calculations();
             double result = calculations.DivideEvenly(["Alex", "Helen", "Fabio"], 19);
 
-            Assert.Equal(result, 6.33);
+            Assert.Equal(6.33, result);
         }
 
         [Fact]
@@ -29,7 +29,7 @@ namespace Calculations.Tests
             var calculations = new Calculations();
             double result = calculations.DivideEvenly(["Alex", "Helen", "Fabio", "Silvia"], 19.5);
 
-            Assert.Equal(result, 4.88);
+            Assert.Equal(4.88, result);
         }
         [Fact]
         public void GivenDecimalReturnsCorrectDecimal()
@@ -37,7 +37,7 @@ namespace Calculations.Tests
             var calculations = new Calculations();
             double result = calculations.DivideEvenly(["Alex", "Helen", "Fabio", "Silvia"], 15.8);
 
-            Assert.Equal(result, 3.95);
+            Assert.Equal(3.95, result);
         }
 
         [Fact]
@@ -46,7 +46,7 @@ namespace Calculations.Tests
             var calculations = new Calculations();
             double result = calculations.DivideEvenly(["Alex"], 15.8);
 
-            Assert.Equal(result, 15.8);
+            Assert.Equal(15.8, result);
         }
 
         [Fact]
@@ -55,7 +55,7 @@ namespace Calculations.Tests
             var calculations = new Calculations();
             double result = calculations.DivideEvenly(["Alex", "Helen", "Fabio", "Silvia", "Amy"], 0.05);
 
-            Assert.Equal(result, 0.01);
+            Assert.Equal(0.01, result);
         }
 
         [Fact]
@@ -64,7 +64,7 @@ namespace Calculations.Tests
             var calculations = new Calculations();
             double result = calculations.DivideEvenly(["Alex", "Helen", "Fabio", "Silvia", "Amy"], 0.01);
 
-            Assert.Equal(result, 0.00);
+            Assert.Equal(0.00, result);
         }
 
         [Fact]
