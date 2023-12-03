@@ -1,0 +1,87 @@
+root = true
+
+[*]
+indent_style = space
+
+[*.{csproj,Build.props}]
+indent_size = 2
+
+[*.cs]
+
+# It took some time to find these links:
+#
+# - The Categories -
+#   https://learn.microsoft.com/en-gb/dotnet/fundamentals/code-analysis/categories
+#
+# - The Severity Levels -
+#   https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/configuration-options#severity-level
+
+# Category: Design
+dotnet_analyzer_diagnostic.category-Design.severity = error
+dotnet_diagnostic.IDE0160.severity = none  # we want our namespaces file-scoped, not block-scoped
+dotnet_diagnostic.CA1031.severity = suggestion  # Not practical in Blazor context, more often than not
+dotnet_diagnostic.CA1032.severity = suggestion  # Standard Exception constructors
+dotnet_diagnostic.CA1064.severity = suggestion  # Exceptions should be public
+
+# Category: Style
+# NOTE: Setting rules to 'warning' means that dotnet format will 'fix' them for you - use 'suggestion' instead if you don't want this (e.g. IDE0010 and IDE0072)!
+dotnet_analyzer_diagnostic.category-Style.severity = error
+dotnet_diagnostic.IDE0008.severity = none  # we want to use var
+dotnet_diagnostic.IDE0010.severity = suggestion  # incomplete switch, not handling all cases or no default
+dotnet_diagnostic.IDE0022.severity = none  # we want to be able to define methods without a block body
+dotnet_diagnostic.IDE0046.severity = suggestion  # subjectively this can lead to less readable code in some cases
+dotnet_diagnostic.IDE0072.severity = suggestion  # incomplete switch, not handling all cases or no default
+dotnet_diagnostic.IDE0130.severity = suggestion  # TODO remove this line to revert this rule to error
+
+# Category: Maintainability
+dotnet_analyzer_diagnostic.category-Maintainability.severity = error
+
+# Category: Naming
+dotnet_analyzer_diagnostic.category-Naming.severity = error
+dotnet_diagnostic.CA1716.severity = suggestion  # The boilerplate project uses 'Shared' in a namespace
+
+# Category: Performance
+dotnet_analyzer_diagnostic.category-Performance.severity = error
+dotnet_diagnostic.CA1812.severity = suggestion  # Barrier to velocity when prototyping!
+dotnet_diagnostic.CA1848.severity = suggestion  # LoggerMessage delegates are OTT for our needs right now (premature optimisation)
+
+# Category: Reliability
+dotnet_analyzer_diagnostic.category-Reliability.severity = error
+
+# Category: Security
+dotnet_analyzer_diagnostic.category-Security.severity = error
+
+# Category: Usage
+dotnet_analyzer_diagnostic.category-Usage.severity = error
+dotnet_diagnostic.BL0005.severity = error
+
+# CSharp Diagnostics (not sure which category)
+dotnet_diagnostic.CS1591.severity = suggestion  # API docs are important, but not a blocker
+
+# Other Diagnostics which we want to error on but are not sure what category they belong under
+dotnet_diagnostic.SYSLIB0014.severity = error
+dotnet_diagnostic.RZ10012.severity = error
+dotnet_diagnostic.BL0007.severity = error
+
+dotnet_diagnostic.IDE0003.severity = error
+dotnet_diagnostic.IDE0018.severity = error
+dotnet_diagnostic.IDE0025.severity = error
+dotnet_diagnostic.IDE0027.severity = error
+dotnet_diagnostic.IDE0045.severity = error
+dotnet_diagnostic.IDE0048.severity = error
+dotnet_diagnostic.IDE0054.severity = error
+dotnet_diagnostic.IDE0060.severity = error
+dotnet_diagnostic.IDE0066.severity = error
+dotnet_diagnostic.IDE0078.severity = error
+
+dotnet_diagnostic.CA1002.severity = warning
+dotnet_diagnostic.CA1062.severity = warning
+dotnet_diagnostic.CA1304.severity = warning
+dotnet_diagnostic.CA1307.severity = warning
+dotnet_diagnostic.CA1311.severity = warning
+dotnet_diagnostic.CA1707.severity = warning
+dotnet_diagnostic.CA1834.severity = warning
+dotnet_diagnostic.CA1852.severity = warning
+dotnet_diagnostic.CA2007.severity = warning
+dotnet_diagnostic.CA2201.severity = warning
+dotnet_diagnostic.CA2227.severity = warning
