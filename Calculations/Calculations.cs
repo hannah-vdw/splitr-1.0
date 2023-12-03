@@ -8,7 +8,7 @@
 
       if (costEach < 0.00)
       {
-        throw new ArgumentException("Amount lent must be more than 0", nameof(amountLent));
+        throw new ArgumentException("Check how much you lent", nameof(amountLent));
       }
 
       return costEach;

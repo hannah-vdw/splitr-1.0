@@ -74,7 +74,7 @@ namespace Calculations.Tests
 
             var exception = Assert.Throws<ArgumentException>(() => calculations.DivideEvenly(["Alex", "Helen", "Fabio", "Silvia", "Amy"], -5));
 
-            Assert.Equal("Amount lent must be more than 0 (Parameter 'amountLent')", exception.Message);
+            Assert.Equal("Check how much you lent (Parameter 'amountLent')", exception.Message);
         }
     }
 }
