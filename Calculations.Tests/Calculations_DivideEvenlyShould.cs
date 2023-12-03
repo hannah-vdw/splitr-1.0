@@ -9,7 +9,7 @@ namespace Calculations.Tests
         public void ReturnsCorrectWholeNumber()
         {
             var borrowers = new string[] { "Alex", "Helen", "Fabio" };
-            double result = Calculations.DivideEvenly(borrowers.Length, 15);
+            var result = Calculations.DivideEvenly(borrowers.Length, 15);
 
             Assert.Equal(5, result);
         }
@@ -18,53 +18,53 @@ namespace Calculations.Tests
         public void RoundsDownTwoPlacesDecimal()
         {
             var borrowers = new string[] { "Alex", "Helen", "Fabio" };
-            double result = Calculations.DivideEvenly(borrowers.Length, 19);
+            var result = Calculations.DivideEvenly(borrowers.Length, 19);
 
-            Assert.Equal(6.33, result);
+            Assert.Equal(6.33m, result);
         }
 
         [Fact]
         public void RoundsUpTwoPlacesDecimal()
         {
             var borrowers = new string[] { "Alex", "Helen", "Fabio", "Silvia" };
-            double result = Calculations.DivideEvenly(borrowers.Length, 19.5);
+            var result = Calculations.DivideEvenly(borrowers.Length, 19.5m);
 
-            Assert.Equal(4.88, result);
+            Assert.Equal(4.88m, result);
         }
         [Fact]
         public void GivenDecimalReturnsCorrectDecimal()
         {
             var borrowers = new string[] { "Alex", "Helen", "Fabio", "Silvia" };
-            double result = Calculations.DivideEvenly(borrowers.Length, 15.8);
+            var result = Calculations.DivideEvenly(borrowers.Length, 15.8m);
 
-            Assert.Equal(3.95, result);
+            Assert.Equal(3.95m, result);
         }
 
         [Fact]
         public void GivenOneBorrowerReturnsOriginalLentAmount()
         {
             var borrowers = new string[] { "Alex" };
-            double result = Calculations.DivideEvenly(borrowers.Length, 15.8);
+            var result = Calculations.DivideEvenly(borrowers.Length, 15.8m);
 
-            Assert.Equal(15.8, result);
+            Assert.Equal(15.8m, result);
         }
 
         [Fact]
         public void SmallestReturnValueIs1p()
         {
             var borrowers = new string[] { "Alex", "Helen", "Fabio", "Silvia", "Amy" };
-            double result = Calculations.DivideEvenly(borrowers.Length, 0.05);
+            var result = Calculations.DivideEvenly(borrowers.Length, 0.05m);
 
-            Assert.Equal(0.01, result);
+            Assert.Equal(0.01m, result);
         }
 
         [Fact]
         public void Returns0IsLentAmountLessThan1pPerBorrower()
         {
             var borrowers = new string[] { "Alex", "Helen", "Fabio", "Silvia", "Amy" };
-            double result = Calculations.DivideEvenly(borrowers.Length, 0.01);
+            var result = Calculations.DivideEvenly(borrowers.Length, 0.01m);
 
-            Assert.Equal(0.00, result);
+            Assert.Equal(0.00m, result);
         }
 
         [Fact]
@@ -74,7 +74,7 @@ namespace Calculations.Tests
 
             var exception = Assert.Throws<ArgumentException>(() => Calculations.DivideEvenly(borrowers.Length, -5));
 
-            Assert.Equal("Check how much you lent (Parameter 'amountLent')", exception.Message);
+            Assert.Equal("A negative amount can not be lent (Parameter 'amountLent')", exception.Message);
         }
     }
 }
