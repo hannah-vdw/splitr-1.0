@@ -3,7 +3,7 @@
     /// <summary>
     /// A class to contain calculations :)
     /// </summary>
-    public class Calculations
+    public static class Calculations
     {
         /// <summary>
         /// Divide Evenly can be a static method as it does not rely on any state in this class. 
