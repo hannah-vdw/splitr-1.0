@@ -3,7 +3,7 @@ using Calculations;
 
 namespace Calculations.Tests
 {
-    public class Calculations_DivideEvenlyShould
+    public class CalculationsDivideEvenlyShould
     {
         [Fact]
         public void ReturnsCorrectWholeNumber()
