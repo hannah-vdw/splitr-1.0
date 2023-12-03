@@ -1,5 +1,8 @@
 ﻿namespace Calculations
 {
+    /// <summary>
+    /// A class to contain calculations :)
+    /// </summary>
     public class Calculations
     {
         /// <summary>
@@ -23,6 +26,9 @@
                 throw new ArgumentException("A negative amount can not be lent", nameof(amountLent));
             }
 
+            // One issue with this - there will be examples when the value returned does not equal the value entered as `amountLent`.
+            // numberOfBorrowers = 2, amountLent = £17.17. Therefore 17.17 / 2 = 8.585, round to 2DP = 8.59, then 8.59 x 2 = £17.18
+            // now we have 1p extra paid somewhere. So this is an issue to be resolved. 
             var costEach = Math.Round(amountLent / numberOfBorrowers, 2);
 
             return costEach;
