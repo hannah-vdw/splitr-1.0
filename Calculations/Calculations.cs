@@ -9,9 +9,9 @@
         /// <param name="amountLent"></param>
         /// <returns>The amount each person owes when the total is equaly split</returns>
         /// <exception cref="ArgumentException"></exception>
-        public static double DivideEvenly(string[] borrowers, double amountLent)
+        public static double DivideEvenly(int numberOfBorrowers, double amountLent) // Rather than passing all of the borrowers names, we should only pass the number of borrowers. This is all that is required for this to work so we don't need the extra data here. Any more is a conflation of concerns. 
         {
-            double costEach = Math.Round((amountLent / borrowers.Length), 2);
+            double costEach = Math.Round((amountLent / numberOfBorrowers), 2);
 
             if (costEach < 0.00)
             {
