@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculations", "Calculations\Calculations.csproj", "{6D1E626B-1085-4959-9B34-15DC6A25B2FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Splitr.Calculations", "Calculations\Splitr.Calculations.csproj", "{6D1E626B-1085-4959-9B34-15DC6A25B2FB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculations.Tests", "Calculations.Tests\Calculations.Tests.csproj", "{FC35E4DA-50DB-4601-8328-48D1CC4C2853}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Splitr.Calculations.Tests", "Calculations.Tests\Splitr.Calculations.Tests.csproj", "{FC35E4DA-50DB-4601-8328-48D1CC4C2853}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
