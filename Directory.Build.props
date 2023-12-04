@@ -1,0 +1,25 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <!--
+      The AnalysisLevel informs the WarningLevel, so we don't need to set that independently.
+      See: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/errors-warnings#warninglevel
+    -->
+    <AnalysisLevel>latest-all</AnalysisLevel>
+
+    <!-- Required for IDE0005 to work, alongside CS8019 -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <!-- Find out about problems more promptly! -->
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <CompilerVisibleProperty Include="RootNamespace" />
+    <CompilerVisibleProperty Include="ProjectDir" />
+  </ItemGroup>
+</Project>
